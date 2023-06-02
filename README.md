@@ -15,6 +15,7 @@ A more detailled description and references for used tools can be found in the [
 #### Using python's `venv`
 
 1. Ensure you have both Python and R installed on your system, as the setup involves creating a Python virtual environment and installing R packages.
+
 2. Create a new virtual environment in a directory named `tls-env`:
     
     ```bash
@@ -65,7 +66,7 @@ This project is structured as a Python package, which allows for better organiza
 3. You can then import the code in `TLS` as you would import any other Python package. For example:
 
     ```python
-    from myproj.configs import config
+    from TLS.configs import config
     ```
 
 Please remember to replace `/path/to/parent/of` with the actual path to the parent directory of `TLS`.
