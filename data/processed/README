@@ -1,0 +1,6 @@
+cp /project/Organoid/20190809_mGast_120h_108h_96h_WT.h5ad TLS_120h_108h_96h_WT.h5ad
+cp /project/Organoid/20190809_mGast_120h_108h_96h_velocity.h5ad TLS_120h_108h_96h_velocity.h5ad
+
+cp /project/Organoid/RNAvelocity/Organoid_A01/velocyto/Organoid_A01.loom TLS_120h.loom
+cp /project/Organoid/RNAvelocity/Organoid_108h/velocyto/Organoid_108h.loom TLS_108h.loom
+cp /project/Organoid/RNAvelocity/Organoid_96h/velocyto/Organoid_96h.loom TLS_96h.loom

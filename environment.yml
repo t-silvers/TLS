@@ -1,0 +1,35 @@
+name: tls-env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - anndata2ri
+  - bioconductor-clusterexperiment
+  - bioconductor-mast
+  - bioconductor-monocle
+  - bioconductor-slingshot
+  - ipykernel
+  - leidenalg
+  - matplotlib
+  - numba<0.59 # some deprecation
+  - numpy
+  - pandas
+  - pip
+  - python
+  - python-igraph
+  - r-base
+  - r-gam
+  - r-ggplot2
+  - r-plyr
+  - scanpy
+  - scipy
+  - seaborn
+  - pip:
+    - gprofiler-official
+    - hnswlib
+    - jupyter
+    - loompy
+    - louvain
+    - pybind11
+    - rpy2
+    - scvelo

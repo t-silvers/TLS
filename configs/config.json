@@ -1,0 +1,53 @@
+{
+    "data": {
+        "TLS @ 96h": {
+            "file type": ".loom",
+            "data type": "processed",
+            "path": "./data/processed/TLS_96h.loom"
+        },
+        "TLS @ 108h": {
+            "file type": ".loom",
+            "data type": "processed",
+            "path": "./data/processed/TLS_108h.loom"
+        },
+        "TLS @ 120h": {
+            "file type": ".loom",
+            "data type": "processed",
+            "path": "./data/processed/TLS_120h.loom"
+        },
+        "TLS AnnData": {
+            "file type": ".h5ad",
+            "data type": "processed",
+            "path": "./data/processed/TLS_120h_108h_96h_WT.h5ad"
+        },
+        "TLS AnnData w/ velocity": {
+            "file type": ".h5ad",
+            "data type": "processed",
+            "path": "./data/processed/TLS_120h_108h_96h_velocity.h5ad"
+        }
+    },
+    "plotting": {
+        "configs": "./configs/plots",
+        "output": "./reports/figures"
+    },
+    "plots": {
+        "timepoint_umap": {
+            "All data": {
+                "timepoint": null,
+                "exclude": ["Seurat_10", "Seurat_11"]
+            },
+            "TLS, 96h": {
+                "timepoint": "Organoid_96h",
+                "exclude": ["Seurat_10", "Seurat_11"]
+            },
+            "TLS, 108h": {
+                "timepoint": "Organoid_108h",
+                "exclude": ["Seurat_11"]
+            },
+            "TLS, 120h": {
+                "timepoint": "Organoid_120h",
+                "exclude": ["Seurat_10", "Seurat_11"]
+            }
+        }
+    }
+}
