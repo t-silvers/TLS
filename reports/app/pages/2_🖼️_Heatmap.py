@@ -21,19 +21,7 @@ if __name__ == '__main__':
         """
     )
     
-    user_input = st.text_input("Enter a gene set name here and press Enter:")
-    st.markdown(
-    """
-    **Gene set options**:
-    - `g2_genes`
-    - `hoxa_genes`
-    - `hoxb_genes`
-    - `hoxc_genes`
-    - `hoxd_genes`
-    - `neural_trajectory_genes`
-    - `somitic_trajectory_genes`
-    """
-    )
+    st.write(f'Preparing data ...')
 
     # Prepare 120 hr data
     tls_adata = sc.read(config.data['TLS AnnData']['path'], sparse=True)    
@@ -48,6 +36,20 @@ if __name__ == '__main__':
         .dpt() # Adds observation 'dpt_pseudotime'
         .assign_obs(key='iroot', value_func=lambda ad: ad.obs['dpt_pseudotime'])
         .scale()
+    )
+
+    user_input = st.text_input("Enter a gene set name here and press Enter:")
+    st.markdown(
+    """
+    **Gene set options**:
+    - `g2_genes`
+    - `hoxa_genes`
+    - `hoxb_genes`
+    - `hoxc_genes`
+    - `hoxd_genes`
+    - `neural_trajectory_genes`
+    - `somitic_trajectory_genes`
+    """
     )
 
     if user_input:

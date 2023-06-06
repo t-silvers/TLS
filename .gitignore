@@ -24,6 +24,9 @@ __pycache__/*
 # *.czias # ZEISS files
 user_feedback.txt
 
+# manuscript
+*.pdf
+
 # Project files
 .ropeproject
 .project

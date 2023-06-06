@@ -48,6 +48,54 @@
                 "timepoint": "Organoid_120h",
                 "exclude": ["Seurat_10", "Seurat_11"]
             }
+        },
+
+
+        "TLS @ 120h subclustering umap": {
+            "data": {
+                "timepoint": "Organoid_120h",
+                "clustering": "louvain",
+                "gene_set": null
+            },
+            "plotting": {
+                "color": ["louvain2"]
+            }
+        },
+
+
+
+        "TLS @ 120h pseudotime umap": {
+            "data": {
+                "timepoint": "Organoid_120h",
+                "pseudotime": "dpt",
+                "gene_set": null
+            },
+            "plotting": {
+                "color": ["dpt_pseudotime"],
+                "legend_loc": "on data"
+            }
+        },
+        "TLS all data hox pseudotime umap": {
+            "data": {
+                "timepoint": null,
+                "pseudotime": "dpt",
+                "gene_set": "hox"
+            },
+            "plotting": {
+                "color": ["dpt_pseudotime"],
+                "legend_loc": "on data"
+            }
+        },
+        "TLS all data neuro pseudotime umap": {
+            "data": {
+                "timepoint": null,
+                "clustering": "louvain",
+                "gene_set": null
+            },
+            "plotting": {
+                "color": ["dpt_pseudotime"],
+                "legend_loc": "on data"
+            }
         }
     }
 }

@@ -14,6 +14,10 @@ def parse_args():
     parser.add_argument('--plot_param_key', type=str,
                         default='timepoint_umap',
                         help='Path to the plot parameters file')
+    parser.add_argument('--from-cache',
+                        default=True,
+                        action=argparse.BooleanOptionalAction)
+
     args = parser.parse_args()
     
     return vars(args)
@@ -21,7 +25,7 @@ def parse_args():
 
 def make_subclustering_plots():
     args = parse_args()
-    tls_adata = sc.read(args['data'], sparse=True)
+    tls_adata = sc.read(args['data'], sparse=True, cache=args['from_cache'])
     
     timepoint_plot_params = config.plots[args['plot_param_key']]
     timepoint_plot_params = timepoint_plot_params.items()    

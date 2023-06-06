@@ -7,7 +7,7 @@
 ## Code Availability
 
 This repository contains the collection of R and python snippets and scripts used to perform the transcriptomics analysis presented in Veenvliet and Bolondi et al. The main processing and data integration steps are show, based on which general visualization and plots of e.g. single genes were done.
-A more detailled description and references for used tools can be found in the [corresponding publication](https://www.biorxiv.org/content/10.1101/2020.03.04.974949v1).
+A more detailed description and references for used tools can be found in the [corresponding publication](https://www.biorxiv.org/content/10.1101/2020.03.04.974949v1).
 
 ### Setup Virtual Environment
 

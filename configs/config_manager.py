@@ -2,6 +2,8 @@ import json
 import os
 
 
+# TODO: Deprecate in JSON reading of plotting config paths
+
 class ConfigManager:
     def __init__(self, base_path=None, config_path='config.json'):
         self.base_path = os.path.dirname(os.path.abspath(__file__)) if base_path is None else base_path

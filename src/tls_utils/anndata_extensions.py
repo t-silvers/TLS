@@ -1,9 +1,12 @@
 from abc import ABC
 import datetime
+from pathlib import Path
 import types
 from typing import Dict, List, Union
 
+import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
+from matplotlib.figure import Figure
 import numpy as np
 import pandas as pd
 import scanpy as sc
@@ -155,6 +158,79 @@ class TLSAnnDataAccessor(
             .exclude_clusters(method='louvain', cluster_ids=exclude)
             .umap(color=['louvain'], palette=sc.pl.palettes.vega_20, show=False, ax=ax, **plot_kwargs)
         )
+
+    def pagapath_hmap(
+        self,
+        nodes: List[str],
+        gene_set: List[str],
+        plot_kwargs: Dict = {},
+        height: float = 6,
+        save_df: bool = False,
+        name: str = None,
+        save_path: str = None,
+    ) -> Figure:
+        """
+        Plot a heatmap of gene expression along a PAGA path.
+        
+        Notes
+        -----
+        - If `save_df` is True, the resulting DataFrame will be saved to `self.uns[name]`.
+        - Because of how `scanpy.pl.paga_path` is implemented, makes most sense to
+            create a figure and axes object inside of this method.
+        """
+        # -- Configure data --
+        # Withouth assigning `distance`, `paga_path` throws a type error (??)
+        self.assign_obs(key='distance', value_func=lambda ad: ad.obs['dpt_pseudotime'])
+        
+        # -- Configure plot --
+        default_plot_kwargs = dict(
+            show_node_names=False,
+            ytick_fontsize=12,
+            left_margin=0.5,
+            show_colorbar=True,
+            normalize_to_zero_one=True,
+        )
+        default_plot_kwargs.update(plot_kwargs)
+        fig, ax = plt.subplots()
+        paga_path_kwargs = dict(
+            nodes=nodes,
+            keys=gene_set,
+            annotations=['distance'],
+            return_data=save_df,
+            ax=ax,
+            show=False
+        )
+
+        # -- Plot --
+        if save_df is False:
+            self.paga_path(**paga_path_kwargs, **default_plot_kwargs)
+
+        # Registered extension method doens't work to return a DataFrame
+        else:
+            __, df = sc.pl.paga_path(self._obj, **paga_path_kwargs, **default_plot_kwargs)
+
+            # Save results
+            if save_path is None:
+                if name is None:
+                    name = '_'.join(nodes)
+                save_path = f'./reports/results/pagapath_{name}.csv'
+                
+            if not isinstance(save_path, Path):
+                save_path = Path(save_path)
+                
+            if save_path.exists():
+                raise FileExistsError(f'File {save_path} already exists.')
+
+            if not save_path.parent.exists():
+                save_path.parent.mkdir(parents=True)
+
+            df.to_csv(save_path)
+
+        # Aesthetics
+        ax.set_frame_on(False)
+        fig.set_size_inches(height, len(gene_set)/(height*(2/3)))
+
+        return fig
 
     # ~*~
 

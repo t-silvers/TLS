@@ -1,7 +1,7 @@
 import streamlit as st
 
 from TLS.reports.app.app_utils import page_footer
-from TLS.scripts.pseudotime.make_subclustering_plots import make_subclustering_plots
+from TLS.scripts.pseudotime.plot_subclustering_by_time import make_subclustering_plots
 from TLS.src.tls_utils import ignore_warnings
 
 
