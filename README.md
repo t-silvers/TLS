@@ -1,5 +1,24 @@
 # Mouse embryonic stem cells self-organize into trunk-like structures with neural tube and somites
 
+## Note on Code Repository
+
+The original code repository is preserved on the `master` branch or available in the [original repository](https://github.com/HeleneKretzmer/TLS).
+
+In the `legacy-refactor` branch, the following major changes have been made:
+
+- :white_check_mark: Directory restructuring
+- :white_check_mark: Develop `src` code and separate it from `scripts` code
+- :white_check_mark: Refactored `scripts/Pseudotime/Pseudotime_and_Subclustering.py`
+- :white_check_mark: Data and plot specs can be set in config files
+- :white_check_mark: A dashboard at `reports/app`
+- :white_square_button: Dashboard Improvements
+- :white_square_button: Legacy code refactoring
+- :white_square_button: Cache data intermediates, make public
+
+
+A more detailed roadmap can be found in `reports/app/pages/4_🎙️_Feedback.py`
+
+
 ## Abstract
 
 > Post-implantation embryogenesis is a highly dynamic process comprising multiple lineage decisions and morphogenetic changes inaccessible to deep analysis in vivo. Here, we show that pluripotent mouse embryonic stem cells (mESCs) form aggregates that upon embedding in an extra-cellular matrix compound induce the formation of highly organized "Trunk-Like-Structures (TLS)" comprising the neural tube and somites. Comparative single-cell RNA-seq analysis confirms that this process is highly analogous to mouse development and follows the same step-wise gene-regulatory program. Tbx6 knockout TLS develop additional neural tubes mirroring the embryonic mutant phenotype, and chemical modulation can induce excess somite formation. Trunk-like-structures thus reveal an unprecedented level of self-organization and provide a powerful platform for investigating post-implantation embryogenesis in a dish.
@@ -75,7 +94,9 @@ Note: If you are using Jupyter notebooks and encounter issues with imports, you 
 
 #### Using the interactive app
 
-An interactive data exploration tools is available as a `streamlit` app at [app.com](app.com).
+A suite of interactive data exploration tools are available as an app. [Networked computers at the MPIMG](http://mariux64.molgen.mpg.de/) can reach the app at [http://141.14.18.2:8501](http://141.14.18.2:8501).
+
+The `streamlit` app can also be run locally from `reports/app` by cloning the `legacy-refactor` branch; however, the app requires intermediate data files that aren't yet included in the repository and must be provided by the user.
 
 
 ## Data Availability
