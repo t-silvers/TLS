@@ -1,4 +1,5 @@
 import argparse
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import scanpy as sc
@@ -57,4 +58,5 @@ def make_subclustering_plots():
 
 if __name__ == '__main__':
     subclustering_fig = make_subclustering_plots()
-    # TODO: Save fig
+    figures_dir = Path(config.plotting['output'])
+    plt.savefig(figures_dir / 'Figure_5A_PAGApaths.pdf')

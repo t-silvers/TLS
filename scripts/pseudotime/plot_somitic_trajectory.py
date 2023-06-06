@@ -58,5 +58,6 @@ def plot_somitic_trajectory():
 
 if __name__ == '__main__':
     somitic_trajectory_fig = plot_somitic_trajectory()
+
     figures_dir = Path(config.plotting['output'])
     plt.savefig(figures_dir / 'Figure_5A_PAGApaths.pdf')
