@@ -33,9 +33,8 @@ if __name__ == '__main__':
     st.markdown(
     """
     **Known issues**:
-    - The app is slow to load
-    - The app is slow to respond to user input
-    - The app is slow to render plots
+    - Label axes and add legend(s) to plots
+    - Replace clustering method and labels with meaningful ones (i.e., cell type)
     - `3_📊_DataFrame_Demo` is a placeholder page
     """
     )
@@ -43,7 +42,6 @@ if __name__ == '__main__':
     st.markdown(
     """
     **Roadmap**:
-    - Cache data intermediates and plots to speed up loading
     - Allow exploration of the data in `3_📊_DataFrame_Demo`
     - Add a page for more of the plots in the paper
     - Accept user input for the gene set

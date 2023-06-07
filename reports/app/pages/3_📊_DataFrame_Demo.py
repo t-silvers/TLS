@@ -5,7 +5,7 @@ from urllib.error import URLError
 
 st.set_page_config(page_title="DataFrame Demo", page_icon="📊")
 
-st.markdown("# DataFrame Demo [NOT IMPLEMENTED]")
+st.markdown("# DataFrame Demo :red[[NOT IMPLEMENTED]]")
 st.sidebar.header("DataFrame Demo")
 st.write(
     """This demo shows how to use `st.write` to visualize Pandas DataFrames.
