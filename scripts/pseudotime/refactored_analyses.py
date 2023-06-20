@@ -1,14 +1,27 @@
-# TODO: It's unclear from original which analyses are actually performed
-#      in the paper. This script is a placeholder for now demonstrating how
-#      to load the data and perform the analyses using the refactored code.
-#
-#       I try to *roughly* separate the analyses into sections that are
-#       demarcated by `# --`.
-#
-#       Once I can figure out what's happening in the original code, I'll
-#       revise and clean up this script. I'll also update the configs.
-#       - TRS 2023-06-06
-#
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Remaining pseudotime and clustering analyses.
+
+It's unclear from original which analyses are actually performed
+in the paper. This script is a placeholder for now demonstrating how
+to load the data and perform the analyses using the refactored code.
+
+I try to *roughly* separate the analyses into sections that are
+demarcated by `# --`.
+
+Once I can figure out what's happening in the original code, I'll
+revise and clean up this script. I'll also update the configs.
+- TRS 2023-06-06
+
+
+Author: Thomas R. Silvers (silvers@molgen.mpg.de)
+
+Usage:
+    # NOTE: This script is under development and is not yet ready to run.
+"""
+
 import argparse
 from pathlib import Path
 

@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Plot somitic trajectory.
+
+Author: Thomas R. Silvers (silvers@molgen.mpg.de)
+
+Usage:
+    python TLS/scripts/pseudotime/plot_somitic_trajectory.py --from-cache
+"""
+
 import argparse
 from pathlib import Path
 

@@ -27,7 +27,7 @@ A key strength and weakness of `Anndata` objects, and in turn the entire `scanpy
 - the attribute space of each object becomes cluttered
 - uncertainty which analyses or data generated object
 
-Libraries can use the decorator `anndata_extensions.register_anndata_accessor()` to add additional “namespaces” to `AnnData` objects. All of these follow a similar convention: you decorate a class, providing the name of attribute to add. The class’s __init__ method gets the object being decorated. For example:
+With `tls_utils`, scripts can use the decorator `anndata_extensions.register_anndata_accessor()` to add additional “namespaces” to `AnnData` objects. All of these follow a similar convention: you decorate a class, providing the name of attribute to add. The class’s __init__ method gets the object being decorated. For example:
 
 ```python
 @anndata_extensions.register_anndata_accessor('devo')

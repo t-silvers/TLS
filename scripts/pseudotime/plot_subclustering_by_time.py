@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+Plot subclustering by pseudotime.
+
+Author: Thomas R. Silvers (silvers@molgen.mpg.de)
+
+Usage:
+    python TLS/scripts/pseudotime/plot_subclustering_by_time.py --from-cache
+"""
+
 import argparse
 from pathlib import Path
 
